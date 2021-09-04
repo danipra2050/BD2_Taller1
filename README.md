@@ -26,3 +26,7 @@ Los scripts que se utilizaron para la creación de las tablas, indices y vistas,
 
 ## 5. Evidencia de la ejecución del script en algún cliente de base de datos como pgAdmin.
 En la carpeta llamada "Documentacion" se encuentra un archivo en formato PDF que contiene las imagenes de evidencia de ejecucion de cada uno de los scripts anteriormente mencionados, estos scripts se ejecutaron DBeaver en la version 21.2.0.
+
+Taller realizado por:
+Daniela Prado Chaparro
+Ing Sistemas Nocturno
