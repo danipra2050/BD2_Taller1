@@ -74,7 +74,7 @@ CREATE TABLE Mascota(
 	tamano DECIMAL NOT NULL,
 	peligroso BIT NOT NULL,
 	foto VARCHAR(50) NOT NULL,
-	activo BIT NOT NULL
+	activo BIT NOT NULL,
 	PRIMARY KEY (codigoMascota)
 );
 
@@ -86,5 +86,23 @@ CREATE TABLE Visita(
 	documentoUsuario VARCHAR(15) REFERENCES Usuario(documentoUsuario) NOT NULL,
 	chip VARCHAR(50),
 	fechaRegistro TIMESTAMP DEFAULT NOW() NOT NULL,
-	observacion VARCHAR(500) NOT NULL
+	observacion VARCHAR(500) NOT NULL,
+	PRIMARY KEY (codigoVisita)
+);
+
+--Creación de la tabla AdjuntoVisita
+CREATE TABLE AdjuntoVisita(
+	codigoVisita VARCHAR(10) REFERENCES Visita(codigoVisita) NOT NULL,
+	nombreAdjunto VARCHAR(50) NOT NULL,
+	activo BIT NOT NULL
+);
+
+--Creación tabla Vaso
+CREATE TABLE Caso(
+	codigoCaso VARCHAR(10) NOT NULL,
+	codigoTipoCaso VARCHAR(10) REFERENCES TipoCaso(codigoTipoCaso) NOT NULL,
+	codigoMascota VARCHAR(10) REFERENCES Mascota(codigoMascota) NOT NULL,
+	observacion VARCHAR(500) NOT NULL,
+	fechaRegistro TIMESTAMP DEFAULT NOW() NOT NULL,
+	PRIMARY KEY (codigoCaso)
 );
